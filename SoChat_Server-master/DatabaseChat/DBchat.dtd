@@ -1,0 +1,12 @@
+<!ELEMENT chatdb (listautenti,listachat)>
+<!ELEMENT listautenti (user*)>
+<!ELEMENT listachat (chat*)>
+<!ELEMENT user (nickName,password)>
+<!ELEMENT nickName (#PCDATA)>
+<!ELEMENT password (#PCDATA)>
+<!ELEMENT chat (ChatMessage*)>
+<!ATTLIST chat id ID #REQUIRED>
+<!ELEMENT ChatMessage (Content,Sender,Receiver)>
+<!ELEMENT Content (#PCDATA)>
+<!ELEMENT Sender (#PCDATA)>
+<!ELEMENT Receiver (#PCDATA)>
