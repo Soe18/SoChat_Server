@@ -1,151 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE chatdb SYSTEM "DBchat.dtd">
-<chatdb>
-    <userlist>
-        <user>
-            <nickname/>
-            <password/>
-        </user>
-        <user>
-            <nickname/>
-            <password/>
-        </user>
-        <user>
-            <nickname>Ciccio</nickname>
-            <password>password</password>
-        </user>
-    </userlist>
-    <chatlist>
-        <chat id="a1">
+<!DOCTYPE SoChat SYSTEM "DBchat.dtd">
+<SoChat>
+    <UserList>
+        <User id="nick">
+            <Password>pass</Password>
+        </User>
+        <User id="Marco">
+            <Password>word</Password>
+        </User>
+        <User id="fabiano">
+            <Password>dapo</Password>
+        </User>
+        <User id="marco">
+            <Password>ghiotto</Password>
+        </User>
+    </UserList>
+    <ChatList>
+        <Chat id="a1">
             <ChatMessage>
                 <Content/>
                 <Sender/>
                 <Receiver/>
             </ChatMessage>
+        </Chat>
+        <Chat id="fabiano_nick">
             <ChatMessage>
-                <Content/>
-                <Sender/>
-                <Receiver/>
+                <Content>ciaooo</Content>
+                <Sender>fabiano</Sender>
+                <Receiver>nick</Receiver>
             </ChatMessage>
             <ChatMessage>
-                <Content/>
-                <Sender/>
-                <Receiver/>
-            </ChatMessage>
-            <ChatMessage>
-                <Content/>
-                <Sender/>
-                <Receiver/>
-            </ChatMessage>
-            <ChatMessage>
-                <Content/>
-                <Sender/>
-                <Receiver/>
-            </ChatMessage>
-            <ChatMessage>
-                <Content/>
-                <Sender/>
-                <Receiver/>
-            </ChatMessage>
-            <ChatMessage>
-                <Content/>
-                <Sender/>
-                <Receiver/>
-            </ChatMessage>
-            <ChatMessage>
-                <Content/>
-                <Sender/>
-                <Receiver/>
-            </ChatMessage>
-            <ChatMessage>
-                <Content/>
-                <Sender/>
-                <Receiver/>
-            </ChatMessage>
-            <ChatMessage>
-                <Content/>
-                <Sender/>
-                <Receiver/>
-            </ChatMessage>
-            <ChatMessage>
-                <Content/>
-                <Sender/>
-                <Receiver/>
-            </ChatMessage>
-            <ChatMessage>
-                <Content/>
-                <Sender/>
-                <Receiver/>
-            </ChatMessage>
-        </chat>
-        <chat id="LDORATO_SDORATO">
-            <ChatMessage>
-                <Content>Cacca</Content>
-                <Sender>LDORATO</Sender>
-                <Receiver>SDORATO</Receiver>
-            </ChatMessage>
-            <ChatMessage>
-                <Content>ciccio</Content>
-                <Sender>LDORATO</Sender>
-                <Receiver>SDORATO</Receiver>
-            </ChatMessage>
-            <ChatMessage>
-                <Content>palla</Content>
-                <Sender>LDORATO</Sender>
-                <Receiver>SDORATO</Receiver>
-            </ChatMessage>
-            <ChatMessage>
-                <Content>fine</Content>
-                <Sender>LDORATO</Sender>
-                <Receiver>SDORATO</Receiver>
-            </ChatMessage>
-            <ChatMessage>
-                <Content>albero!</Content>
-                <Sender>LDORATO</Sender>
-                <Receiver>SDORATO</Receiver>
-            </ChatMessage>
-            <ChatMessage>
-                <Content>scusa</Content>
-                <Sender>LDORATO</Sender>
-                <Receiver>SDORATO</Receiver>
+                <Content>ciaa</Content>
+                <Sender>nick</Sender>
+                <Receiver>fabiano</Receiver>
             </ChatMessage>
             <ChatMessage>
                 <Content>ciao</Content>
-                <Sender>LDORATO</Sender>
-                <Receiver>SDORATO</Receiver>
+                <Sender>nick</Sender>
+                <Receiver>fabiano</Receiver>
             </ChatMessage>
             <ChatMessage>
-                <Content>hey</Content>
-                <Sender>LDORATO</Sender>
-                <Receiver>SDORATO</Receiver>
+                <Content>ciao</Content>
+                <Sender>nick</Sender>
+                <Receiver>fabiano</Receiver>
             </ChatMessage>
             <ChatMessage>
-                <Content>ciao2</Content>
-                <Sender>LDORATO</Sender>
-                <Receiver>SDORATO</Receiver>
+                <Content>bene, te?</Content>
+                <Sender>nick</Sender>
+                <Receiver>fabiano</Receiver>
             </ChatMessage>
             <ChatMessage>
-                <Content>fine</Content>
-                <Sender>LDORATO</Sender>
-                <Receiver>SDORATO</Receiver>
+                <Content>ciao fab!</Content>
+                <Sender>nick</Sender>
+                <Receiver>fabiano</Receiver>
             </ChatMessage>
             <ChatMessage>
-                <Content>ciaooo</Content>
-                <Sender>LDORATO</Sender>
-                <Receiver>SDORATO</Receiver>
+                <Content>ciao nick!</Content>
+                <Sender>fabiano</Sender>
+                <Receiver>nick</Receiver>
             </ChatMessage>
             <ChatMessage>
-                <Content>salve</Content>
-                <Sender>LDORATO</Sender>
-                <Receiver>SDORATO</Receiver>
+                <Content>ciao</Content>
+                <Sender>fabiano</Sender>
+                <Receiver>nick</Receiver>
             </ChatMessage>
-        </chat>
-        <chat id="Ciccio_Palla">
             <ChatMessage>
-                <Content>Ciao Palla! Sono Ciccio</Content>
-                <Sender>Ciccio</Sender>
-                <Receiver>Palla</Receiver>
+                <Content>ciao nick</Content>
+                <Sender>fabiano</Sender>
+                <Receiver>nick</Receiver>
             </ChatMessage>
-        </chat>
-    </chatlist>
-</chatdb>
+        </Chat>
+        <Chat id="nick_marco">
+            <ChatMessage>
+                <Content>we marco!</Content>
+                <Sender>nick</Sender>
+                <Receiver>marco</Receiver>
+            </ChatMessage>
+            <ChatMessage>
+                <Content>ciao! da quanto poco tempo...</Content>
+                <Sender>marco</Sender>
+                <Receiver>nick</Receiver>
+            </ChatMessage>
+        </Chat>
+    </ChatList>
+</SoChat>

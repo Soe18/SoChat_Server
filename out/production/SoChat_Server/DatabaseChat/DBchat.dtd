@@ -1,11 +1,11 @@
-<!ELEMENT chatdb (userlist,chatlist)>
-<!ELEMENT userlist (user*)>
-<!ELEMENT chatlist (chat*)>
-<!ELEMENT user (nickname,password)>
-<!ELEMENT nickname (#PCDATA)>
-<!ELEMENT password (#PCDATA)>
-<!ELEMENT chat (ChatMessage*)>
-<!ATTLIST chat id ID #REQUIRED>
+<!ELEMENT SoChat (UserList,ChatList)>
+<!ELEMENT UserList (User*)>
+<!ELEMENT ChatList (Chat*)>
+<!ELEMENT User (Password)>
+<!ATTLIST User id ID #REQUIRED>
+<!ELEMENT Password (#PCDATA)>
+<!ELEMENT Chat (ChatMessage*)>
+<!ATTLIST Chat id ID #REQUIRED>
 <!ELEMENT ChatMessage (Content,Sender,Receiver)>
 <!ELEMENT Content (#PCDATA)>
 <!ELEMENT Sender (#PCDATA)>
