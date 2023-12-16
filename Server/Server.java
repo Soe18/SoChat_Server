@@ -73,14 +73,14 @@ public class Server {
         dbManager.saveMSG(msgForm.getSender(), msgForm.getReceiver(), msgForm.getText(), deep);
     }
 
-    public Document loadChat(String user) {
-        ArrayList<MsgForm> messages = dbManager.getChats(user);
+    public Document loadChat(String user, String requested_user) {
+        ArrayList<MsgForm> messages = dbManager.getChat(user, requested_user);
         CostruzioneChatXML costruzioneChatXML = new CostruzioneChatXML(messages);
         return costruzioneChatXML.getXMLObject();
     }
 
-    public Document loadContacts() {
-        ArrayList<String> users = dbManager.getUsers();
+    public Document loadContacts(String nickname) {
+        ArrayList<String> users = dbManager.getUsers(nickname);
         CostruzioneContattiXML costruzioneContattiXML = new CostruzioneContattiXML(users);
         return costruzioneContattiXML.getXMLObject();
     }

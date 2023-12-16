@@ -199,43 +199,43 @@ public class DBManager {
         return result;
     }
 
-    public synchronized ArrayList<String> getUsers() {
+    public synchronized ArrayList<String> getUsers(String nickname) {
         NodeList allUsers = db.getElementsByTagName("User");
         ArrayList<String> result = new ArrayList<>();
 
         for (int i = 0; i < allUsers.getLength(); i++) {
-            result.add(allUsers.item(i).getAttributes().getNamedItem("id").getTextContent());
+            String currUser = allUsers.item(i).getAttributes().getNamedItem("id").getTextContent();
+            if (!currUser.equals(nickname)) {
+                result.add(currUser);
+            }
         }
         return result;
     }
 
-    public synchronized ArrayList<MsgForm> getChats(String user) {
+    public synchronized ArrayList<MsgForm> getChat(String user, String requestedUser) {
         ArrayList<MsgForm> messages = new ArrayList<>();
         NodeList allChats = db.getElementsByTagName("Chat");
         String tmp = "";
 
         for (int i = 0; i < allChats.getLength(); i++) {
             tmp = allChats.item(i).getAttributes().getNamedItem("id").getTextContent();
-            if (tmp.contains(user)) {
-                NodeList messagesNodeList = allChats.item(i).getChildNodes();
-
-                for (int j = 0; j < messagesNodeList.getLength(); j++) {
-                    String t = messagesNodeList.item(j).getChildNodes().item(0).getTextContent();
-                    String s = messagesNodeList.item(j).getChildNodes().item(1).getTextContent();
-                    String r = messagesNodeList.item(j).getChildNodes().item(2).getTextContent();
-
-                    MsgForm msgForm = new MsgForm(s,r,t);
-                    messages.add(msgForm);
+            if (tmp.contains(user) && tmp.contains(requestedUser)) {
+                NodeList chat = allChats.item(i).getChildNodes();
+                for (int j = 0; j < chat.getLength(); j++) {
+                    String t = chat.item(j).getChildNodes().item(0).getTextContent();
+                    String s = chat.item(j).getChildNodes().item(1).getTextContent();
+                    String r = chat.item(j).getChildNodes().item(2).getTextContent();
+                    messages.add(new MsgForm(s, r, t));
                 }
             }
         }
-        return null;
+        return messages;
     }
 
 
     public static void main(String[] args) {
         DBManager db = new DBManager();
         //db.findChat("nick","fabiano");
-        System.out.println(db.getChats("fabiano"));
+        System.out.println(db.getChat("nick", "fabiano"));
     }
 }

@@ -76,15 +76,7 @@ public class ServerSkeletonThread extends Thread {
 				ClientSockets.getInstance().hashMap.put(clientName, outBuffer);
 				hmMutex.release();
 
-				// load contact
-				Document loadContacts = server.loadContacts();
-				outBuffer.writeObject(loadContacts);
-
-				// load chat
-				Document loadChat = server.loadChat(clientName);
-				outBuffer.writeObject(loadChat);
 			}
-
 
 			// Main loop
 			while (!ended)
@@ -95,17 +87,25 @@ public class ServerSkeletonThread extends Thread {
 				// get the message content
 				type = xmlInterpreter.getTypeOfComunication(msgDoc);
 
-				if (type == 2) {
+				if (type == 2) { // send msg
 					MsgForm msgForm = xmlInterpreter.returnMessageInfos(msgDoc);
 					System.out.println ("Messaggio ricevuto <" + msgForm.getText() + ">. Invio risposta, attendere..." );
 					server.sendMSG(msgForm, isAlive());
+
 					hmMutex.acquire();
 					ObjectOutputStream toEndPoint = ClientSockets.getInstance().hashMap.get(msgForm.getReceiver());
 					hmMutex.release();
+
 					CostruzioneMessaggioXML msgXML = new CostruzioneMessaggioXML(msgForm.getText(), msgForm.getSender(), msgForm.getReceiver());
 					Document reply = msgXML.getXMLObject();
 					toEndPoint.writeObject(reply);
 					outBuffer.writeUTF("Messaggio inviato!");
+				}
+				else if (type == 5) {
+					// load contact
+					String nickname = xmlInterpreter.returnLoadContactsInfos(msgDoc);
+					Document loadContacts = server.loadContacts(nickname);
+					outBuffer.writeObject(loadContacts);
 				}
 				else if (type == 3) {
 					ended = true;

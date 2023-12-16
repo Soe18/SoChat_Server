@@ -39,6 +39,12 @@ public class XMLInterpreter {
             case "message_enter":
                 result = 4;
                 break;
+            case "loadcontacts":
+                result = 5;
+                break;
+            case "loadchat":
+                result = 5;
+                break;
             default:
                 result = -1;
                 break;
@@ -51,6 +57,11 @@ public class XMLInterpreter {
         String receiver = xml.getElementsByTagName("Receiver").item(0).getTextContent();
         String text = xml.getElementsByTagName("Content").item(0).getTextContent();
         return new MsgForm(sender, receiver, text);
+    }
+
+    public String returnLoadContactsInfos(Document xml) {
+        String username = xml.getElementsByTagName("Nickname").item(0).getTextContent();
+        return username;
     }
 
     public RegForm returnRegisterInfos(Document xml) {

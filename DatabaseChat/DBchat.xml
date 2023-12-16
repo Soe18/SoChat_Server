@@ -69,6 +69,11 @@
                 <Sender>fabiano</Sender>
                 <Receiver>nick</Receiver>
             </ChatMessage>
+            <ChatMessage>
+                <Content>Ciao nick!</Content>
+                <Sender>fabiano</Sender>
+                <Receiver>nick</Receiver>
+            </ChatMessage>
         </Chat>
         <Chat id="nick_marco">
             <ChatMessage>

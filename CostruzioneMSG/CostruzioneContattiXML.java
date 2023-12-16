@@ -48,7 +48,7 @@ public class CostruzioneContattiXML {
         e.setTextContent("contacts");
         rootElement.appendChild(e);
         for (int i = 0; i < users.size(); i++) {
-            e = documento.createElement("user");
+            e = documento.createElement("User");
             e.setTextContent(users.get(i));
             rootElement.appendChild(e);
         }

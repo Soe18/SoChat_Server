@@ -45,10 +45,11 @@ public class CostruzioneChatXML {
 
         //Add Content, Sender and Receiver to the ChatMessage element as children elements
         Element e = documento.createElement("Type");
-        e.setTextContent("loadchats");
+        e.setTextContent("loadchat");
         rootElement.appendChild(e);
-        Element contentElement = documento.createElement("Chat");
+        Element contentRootElement = documento.createElement("Chat");
         for (int i = 0; i < messages.size(); i++) {
+            Element contentElement = documento.createElement("ChatMSG");
             e = documento.createElement("Content");
             e.setTextContent(messages.get(i).getText());
             contentElement.appendChild(e);
@@ -58,8 +59,9 @@ public class CostruzioneChatXML {
             e = documento.createElement("Receiver");
             e.setTextContent(messages.get(i).getReceiver());
             contentElement.appendChild(e);
+            contentRootElement.appendChild(contentElement);
         }
-        rootElement.appendChild(contentElement);
+        rootElement.appendChild(contentRootElement);
         //return the document object
         return documento;
     }
